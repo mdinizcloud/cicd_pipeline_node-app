@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'node1' }
+  agent { label 'master' }
   environment{
     DOCKER_ACCOUNT = "ma31121990"
     DOCKER_LOGIN = "docker_hub_login"
