@@ -40,8 +40,7 @@ pipeline {
       }
       steps {
         sh "sed 's/v1/${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
-        sh "kubectl apply -f node-app-pod.yaml"
-     
+        sh "kubectl --kubeconfig ~/.ssh/k8s.infra -f node-app-pod.yaml"
       }
     }
   }
