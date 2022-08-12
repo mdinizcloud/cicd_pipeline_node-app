@@ -18,7 +18,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'docker build -f "Dockerfile-terraform" -t ${DOCKER_ACCOUNT}/terraform:${env.BUILD_NUMBER}.'
-        sh 'docker build -f "Dockerfile-cli" -t ${DOCKER_ACCOUNT}/cli:${env.BUILD_NUMBER} . ''
+        sh 'docker build -f "Dockerfile-cli" -t ${DOCKER_ACCOUNT}/cli:${env.BUILD_NUMBER} . '
       }
     }
 
