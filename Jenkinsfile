@@ -44,14 +44,12 @@ pipeline {
             sshagent(['root-ssh']) {
             sh "scp -P 15022 -o StrictHostKeyChecking=no services.yaml node-app-pod.yaml root@192.168.134.201:~/ "
         script{
-            try}
+            try {
                 ssh "root@192.168.134.201 kubectl apply -f ."
             }catch(error){
                 sh "root@192.168.134.201 kubectl create -f ."
             }
-
-        }
-        
+          }
         }        
       }
     }
