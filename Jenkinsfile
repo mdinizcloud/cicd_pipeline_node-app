@@ -1,7 +1,6 @@
 pipeline {
   agent { label 'node1' }
   environment{
-    DOCKER_TAG = getDockerTag()
     DOCKER_ACCOUNT = "ma31121990"
     DOCKER_LOGIN = "docker_hub_login"
     CONTAINER_NAME_1 = "terraform"
