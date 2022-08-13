@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: nodeapp
-      image: ma31121990/nodeapp:v1
+      image: ma31121990/terraform:v1
       ports:
         - containerPort: 8080
   imagePullSecrets:

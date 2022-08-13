@@ -39,7 +39,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh "sed 's/nodeapp:v1/nodeapp:v${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
+        sh "sed 's/nodeapp:v1/terraform:v${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
         sh "kubectl --kubeconfig ~/.ssh/k8s.infra apply -f node-app-pod.yaml"
       }
     }
