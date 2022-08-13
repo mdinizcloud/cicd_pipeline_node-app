@@ -10,3 +10,5 @@ spec:
       image: ma31121990/nodeapp:v1
       ports:
         - containerPort: 8080
+  imagePullSecrets:
+    - name: ma31121990
