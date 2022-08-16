@@ -94,6 +94,5 @@ pipeline {
     //     sh "kubectl --kubeconfig ~/.ssh/k8s.infra apply -f node-app-pod.yaml"
     //    }
     // }
-  }
-}
 
+}
