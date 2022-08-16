@@ -17,16 +17,14 @@ pipeline {
 // BUILD Pipeline Funcional
     stage('Build_C_FUNC') {
       steps {
-              {
-          script {
+         script {
             docker.withRegistry('https://' + "${docker_registry}", 'register_hub_login') {
                 def dockerImage = docker.build("${image_name}:${env.BUILD_NUMBER}")
                 dockerImage.push()
               }
-            }
           }
         }
-      }
+     }
 
 //BUILD Pipeline CLOUD Guru
 //     stage('Build_C-GURU') {
