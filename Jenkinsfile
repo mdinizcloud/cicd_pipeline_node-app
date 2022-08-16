@@ -28,8 +28,8 @@ pipeline {
       }
       steps {
         withDockerRegistry([ credentialsId: "docker_hub_login", url: "" ]) {
-          sh "docker push ${DOCKER_ACCOUNT}/terraform:${env.BUILD_NUMBER}"
-          sh "docker push ${DOCKER_ACCOUNT}/cli:${env.BUILD_NUMBER}"
+          sh "docker push ${DOCKER_ACCOUNT}/cloud/terraform:${env.BUILD_NUMBER}"
+          sh "docker push ${DOCKER_ACCOUNT}/cloud/cli:${env.BUILD_NUMBER}"
         }
       }
     }
