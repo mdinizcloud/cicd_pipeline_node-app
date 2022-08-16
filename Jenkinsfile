@@ -19,7 +19,7 @@ pipeline {
   //       sh "docker build -f Dockerfile-terraform -t ${DOCKER_ACCOUNT}/cloud/terraform:${env.BUILD_NUMBER} ."
   //     }
   //   }
-
+ stages {
 // BUILD Pipeline Funcional
     stage('Build_C_FUNC') {
       steps {
@@ -28,11 +28,11 @@ pipeline {
             docker.withRegistry('https://' + "${docker_registry}", 'register_hub_login') {
                 def dockerImage = docker.build("${image_name}:${env.BUILD_NUMBER}")
                 dockerImage.push()
+              }
             }
           }
         }
       }
-    }
 
 //BUILD Pipeline CLOUD Guru
 //     stage('Build_C-GURU') {
@@ -95,4 +95,5 @@ pipeline {
     //    }
     // }
 
+  }
 }
