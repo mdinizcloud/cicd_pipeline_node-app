@@ -7,8 +7,8 @@ metadata:
 spec:
   containers:
     - name: nodeapp
-      image: ma31121990/terraform:v1
+      image: registersp.funcionalcorp.net.br/cloud/terraform:v1
       ports:
         - containerPort: 8080
   imagePullSecrets:
-    - name: ma31121990
+    - name: harbor
