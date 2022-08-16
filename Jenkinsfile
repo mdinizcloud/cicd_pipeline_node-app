@@ -2,7 +2,6 @@ pipeline {
   agent { label 'master' }
   environment{
     DOCKER_ACCOUNT = "registersp.funcionalcorp.net.br"
-    DOCKER_LOGIN = "register_hub_login"
     CONTAINER_NAME_1 = "terraform"
     CONTAINER_NAME_2 = "cli"
 
@@ -27,7 +26,6 @@ pipeline {
         branch 'master'
       }
       steps {
-        withDockerRegistry([ credentialsId: "register_hub_login", url: "" ]) {
           sh "docker push ${DOCKER_ACCOUNT}/cloud/terraform:${env.BUILD_NUMBER}"
           sh "docker push ${DOCKER_ACCOUNT}/cloud/cli:${env.BUILD_NUMBER}"
         }

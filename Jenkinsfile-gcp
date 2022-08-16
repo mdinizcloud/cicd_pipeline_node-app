@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'master' }
   environment{
-    DOCKER_ACCOUNT = "registersp.funcionalcorp.net.br"
+    DOCKER_ACCOUNT = "ma31121990"
     DOCKER_LOGIN = "docker_hub_login"
     CONTAINER_NAME_1 = "terraform"
     CONTAINER_NAME_2 = "cli"
