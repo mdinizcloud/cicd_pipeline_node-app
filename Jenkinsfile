@@ -27,7 +27,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        withDockerRegistry([ credentialsId: "docker_hub_login", url: "" ]) {
+        withDockerRegistry([ credentialsId: "register_hub_login", url: "" ]) {
           sh "docker push ${DOCKER_ACCOUNT}/cloud/terraform:${env.BUILD_NUMBER}"
           sh "docker push ${DOCKER_ACCOUNT}/cloud/cli:${env.BUILD_NUMBER}"
         }
