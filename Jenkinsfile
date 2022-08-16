@@ -1,8 +1,8 @@
 pipeline {
   agent { label 'master' }
   environment{
-    DOCKER_ACCOUNT = "ma31121990"
-    DOCKER_LOGIN = "docker_hub_login"
+    DOCKER_ACCOUNT = "registersp.funcionalcorp.net.br"
+    DOCKER_LOGIN = "register_hub_login"
     CONTAINER_NAME_1 = "terraform"
     CONTAINER_NAME_2 = "cli"
 
@@ -17,8 +17,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "docker build -f Dockerfile-terraform -t ${DOCKER_ACCOUNT}/terraform:${env.BUILD_NUMBER} ."
-        sh "docker build -f Dockerfile-cli -t ${DOCKER_ACCOUNT}/cli:${env.BUILD_NUMBER} . "
+        sh "docker build -f Dockerfile-terraform -t ${DOCKER_ACCOUNT}/cloud/terraform:${env.BUILD_NUMBER} ."
+        sh "docker build -f Dockerfile-cli -t ${DOCKER_ACCOUNT}/cloud/cli:${env.BUILD_NUMBER} . "
       }
     }
 
