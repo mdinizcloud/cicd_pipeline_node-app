@@ -1,11 +1,5 @@
 pipeline {
   agent { label 'master' }
-  environment{
-    DOCKER_ACCOUNT = "registersp.funcionalcorp.net.br"
-    CONTAINER_NAME = "terraform"
-    IMAGE = "registersp.funcionalcorp.net.br/terraform"
-    image_name = "cloud/terraform"
-    }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
