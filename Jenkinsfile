@@ -17,7 +17,7 @@ pipeline {
 // BUILD Pipeline Funcional
     stage('Build_C_FUNC') {
       steps {
-        container('docker') {
+              {
           script {
             docker.withRegistry('https://' + "${docker_registry}", 'register_hub_login') {
                 def dockerImage = docker.build("${image_name}:${env.BUILD_NUMBER}")
