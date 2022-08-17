@@ -24,6 +24,18 @@ pipeline {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //BUILD Pipeline CLOUD Guru
 //     stage('Build_C-GURU') {
 //         when {

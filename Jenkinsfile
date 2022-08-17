@@ -22,8 +22,9 @@ pipeline {
  
     stage('Deploy_PRD') {
       steps {
-        sh "sed 's/terraform:v1/terraform:v${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
+        sh "sed 's/terraform:1/terraform:${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
         sh "kubectl --kubeconfig ~/.ssh/k8s.infra apply -f node-app-pod.yaml"
+        sh "kubectl --kubeconfig ~/.ssh/k8s.infra apply -f services.yaml"
        }
     }
 
