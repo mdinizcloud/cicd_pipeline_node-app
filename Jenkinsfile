@@ -20,6 +20,8 @@ pipeline {
         }
      }
  
+
+// Deploy to PRD using kubectl sh 
     stage('Deploy_PRD') {
       steps {
         sh "sed 's/terraform:1/terraform:${env.BUILD_NUMBER}/' pods.yaml > node-app-pod.yaml"
